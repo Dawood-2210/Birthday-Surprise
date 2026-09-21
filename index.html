@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ff4f81">
+  <title>Birthday Surprise 🎂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PASSWORD -->
+  <section id="passwordScreen" class="screen password-screen">
+    <div class="glass-card password-card">
+      <div class="lock">🔐</div>
+      <h1>Private Surprise ❤️</h1>
+      <p>This surprise is only for you... ✨</p>
+      <input type="password" id="passwordInput" placeholder="Enter Password" autocomplete="off">
+      <button onclick="unlockWebsite()">Unlock 🔓</button>
+      <p id="passwordError" class="error"></p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main id="mainWebsite" class="hidden">
+    <div class="hearts" aria-hidden="true">❤️ ✨ 💕 ✨ ❤️</div>
+
+    <!-- START -->
+    <section id="startPage" class="glass-card page">
+      <div class="emoji">🎁</div>
+      <h1>Birthday Surprise</h1>
+      <p>Someone has a special surprise waiting for you... ❤️</p>
+      <button onclick="startGame()">Start Birthday Game 🎮</button>
+    </section>
+
+    <!-- GAME -->
+    <section id="game" class="glass-card page hidden">
+      <div class="game-icon">💖</div>
+      <h2>Birthday Game</h2>
+      <p class="counter" id="counter">Question 1 of 30</p>
+      <div class="progress"><div id="progressBar"></div></div>
+
+      <img id="questionImage" src="photos/photo1.jpeg" alt="Birthday memory">
+
+      <div class="question-box">
+        <p id="question"></p>
+      </div>
+
+      <label for="answer">Your Answer 💌</label>
+      <textarea id="answer" placeholder="Apna jawab yahan likhein..."></textarea>
+
+      <button id="nextButton" onclick="nextQuestion()">Next ➜</button>
+    </section>
+
+    <!-- MEMORIES + MUSIC -->
+    <section id="memories" class="glass-card page hidden">
+      <div class="emoji">📸</div>
+      <h2>Our Beautiful Memories ❤️</h2>
+      <p>Thori si memories... aur thora sa birthday magic ✨</p>
+
+      <div class="gallery">
+        <img src="photos/photo1.jpeg" alt="Memory 1">
+        <img src="photos/photo2.jpeg" alt="Memory 2">
+        <img src="photos/photo3.jpeg" alt="Memory 3">
+      </div>
+
+      <div class="music-box">
+        <h3>🎵 Birthday Music</h3>
+        <p>Music sunne ke liye button press karein.</p>
+        <audio id="birthdayMusic" src="birthday-music.wav" preload="auto"></audio>
+        <button id="musicButton" onclick="toggleMusic()">▶ Play Music</button>
+      </div>
+
+      <button onclick="showGift()">Continue to Surprise ➜</button>
+    </section>
+
+    <!-- GIFT -->
+    <section id="giftPage" class="glass-card page hidden">
+      <div id="giftClosed">
+        <div class="gift-box">🎁</div>
+        <h1>One Last Surprise...</h1>
+        <p>Ready to open your birthday gift? 💕</p>
+        <button class="gift-button" onclick="openGift()">Open My Gift 🎁</button>
+      </div>
+
+      <div id="giftOpened" class="hidden">
+        <div class="confetti">🎉 ✨ 🎊 ✨ 🎉</div>
+        <div class="money">💝</div>
+        <h1>Surprise Gift! 🎁</h1>
+        <p class="gift-label">You received</p>
+        <div class="amount">Rs. 2,000</div>
+        <p class="gift-message">A little surprise, with lots of happiness and love. ❤️</p>
+        <p class="small-note">Happy Birthday! 🎂✨</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
